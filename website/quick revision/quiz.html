@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | QuickRevise</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <nav>
+                <div class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                   <p> Quick Revise</p>
+                </div>
+                  <ul class="nav-links">
+                <li> <a href="index.html" class="active"> Home </a></li>
+                <li> <a href="subject.html"> Subject </a></li>
+                <li> <a href="notes.html"> Notes </a></li>
+                <li> <a href="flashcard.html"> Flashcards </a></li>
+                <li> <a href="quiz.html"> Quiz </a></li>
+                <li> <a href="about.html"> About </a></li>
+                
+                
+            </ul>
+            <div class="nav-buttons">
+                <a href="login.html" class="login-btn"> Login</a>
+                <a href="signup" class="signup-btn">Signup</a>
+            </div>
+            </nav>
+        </div>
+<body class="bg-gray-50">
+  
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-3xl mx-auto">
+            <!-- Quiz Header -->
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800">Engineering Quiz</h1>
+                    <p class="text-gray-600">Test your knowledge with these MCQs</p>
+                </div>
+                <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg flex items-center gap-2">
+                    <span class="font-semibold">Score:</span>
+                    <span id="score">0</span>/<span id="total">5</span>
+                </div>
+            </div>
+
+            <!-- Quiz Progress -->
+            <div class="mb-6">
+                <div class="flex justify-between mb-1">
+                    <span class="text-sm font-medium text-gray-700">Question <span id="current-question">1</span> of 5</span>
+                    <span class="text-sm font-medium text-gray-700"><span id="correct-count">0</span> correct</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full" style="width: 20%"></div>
+                </div>
+            </div>
+
+            <!-- Quiz Question -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h2 id="question" class="text-xl font-semibold mb-6">What is the time complexity of a binary search algorithm on a sorted array of size n?</h2>
+                
+                <div id="options" class="space-y-3">
+                    <div class="flex items-center">
+                        <input type="radio" id="option1" name="quiz" value="A" class="hidden peer">
+                        <label for="option1" class="flex items-center w-full p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:bg-blue-50 transition">
+                            <div class="w-5 h-5 rounded-full border border-gray-300 mr-4 flex-shrink-0 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:border-4"></div>
+                            <span>O(1)</span>
+                        </label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="option2" name="quiz" value="B" class="hidden peer">
+                        <label for="option2" class="flex items-center w-full p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:bg-blue-50 transition">
+                            <div class="w-5 h-5 rounded-full border border-gray-300 mr-4 flex-shrink-0 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:border-4"></div>
+                            <span>O(log n)</span>
+                        </label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="option3" name="quiz" value="C" class="hidden peer">
+                        <label for="option3" class="flex items-center w-full p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:bg-blue-50 transition">
+                            <div class="w-5 h-5 rounded-full border border-gray-300 mr-4 flex-shrink-0 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:border-4"></div>
+                            <span>O(n)</span>
+                        </label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="option4" name="quiz" value="D" class="hidden peer">
+                        <label for="option4" class="flex items-center w-full p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 peer-checked:border-blue-500 peer-checked:bg-blue-50 transition">
+                            <div class="w-5 h-5 rounded-full border border-gray-300 mr-4 flex-shrink-0 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:border-4"></div>
+                            <span>O(n²)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Actions -->
+            <div class="flex justify-between">
+                <button id="prev-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg transition flex items-center gap-2 opacity-50 cursor-not-allowed">
+                    <i data-feather="chevron-left"></i> Previous
+                </button>
+                <button id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition flex items-center gap-2">
+                    Next <i data-feather="chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+    
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Quiz functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = [
+                {
+                    question: "What is the time complexity of a binary search algorithm on a sorted array of size n?",
+                    options: ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+                    answer: "B"
+                },
+                // More questions would be added here in a real implementation
+            ];
+            
+            let currentQuestion = 0;
+            let score = 0;
+            
+            // Update question and options
+            function updateQuestion() {
+                const q = questions[currentQuestion];
+                document.getElementById('question').textContent = q.question;
+                
+                const options = document.querySelectorAll('#options input[type="radio"]');
+                options.forEach((option, index) => {
+                    option.nextElementSibling.querySelector('span').textContent = q.options[index];
+                    option.checked = false;
+                });
+                
+                document.getElementById('current-question').textContent = currentQuestion + 1;
+                document.getElementById('progress-bar').style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+                
+                // Update button states
+                document.getElementById('prev-btn').classList.toggle('opacity-50', currentQuestion === 0);
+                document.getElementById('prev-btn').classList.toggle('cursor-not-allowed', currentQuestion === 0);
+                
+                if (currentQuestion === questions.length - 1) {
+                    document.getElementById('next-btn').innerHTML = 'Submit <i data-feather="check"></i>';
+                } else {
+                    document.getElementById('next-btn').innerHTML = 'Next <i data-feather="chevron-right"></i>';
+                }
+                
+                feather.replace();
+            }
+            
+            // Next button click handler
+            document.getElementById('next-btn').addEventListener('click', function() {
+                const selectedOption = document.querySelector('input[name="quiz"]:checked');
+                
+                if (selectedOption) {
+                    if (selectedOption.value === questions[currentQuestion].answer) {
+                        score++;
+                        document.getElementById('correct-count').textContent = score;
+                        document.getElementById('score').textContent = score;
+                    }
+                    
+                    currentQuestion++;
+                    
+                    if (currentQuestion < questions.length) {
+                        updateQuestion();
+                    } else {
+                        // Quiz completed
+                        alert(`Quiz completed! Your score: ${score}/${questions.length}`);
+                        // Reset quiz
+                        currentQuestion = 0;
+                        score = 0;
+                        updateQuestion();
+                        document.getElementById('correct-count').textContent = '0';
+                        document.getElementById('score').textContent = '0';
+                    }
+                } else {
+                    alert('Please select an option before proceeding.');
+                }
+            });
+            
+            // Previous button click handler
+            document.getElementById('prev-btn').addEventListener('click', function() {
+                if (currentQuestion > 0) {
+                    currentQuestion--;
+                    updateQuestion();
+                }
+            });
+            
+            // Initialize quiz
+            updateQuestion();
+        });
+    </script>
+</body>
+</html>

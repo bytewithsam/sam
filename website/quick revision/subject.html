@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Revision</title>
+    <link rel="stylesheet" href="style.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+ <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <nav>
+                <div class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                   <p> Quick Revise</p>
+                </div>
+                  <ul class="nav-links">
+                <li> <a href="index.html" class="active"> Home </a></li>
+                <li> <a href="subject.html"> Subject </a></li>
+                <li> <a href="notes.html"> Notes </a></li>
+                <li> <a href="flashcard.html"> Flashcards </a></li>
+                <li> <a href="quiz.html"> Quiz </a></li>
+                <li> <a href="about.html"> About</a></li>
+                
+            </ul>
+            <div class="nav-buttons">
+                <a href="login.html" class="login-btn"> Login</a>
+                <a href="signup" class="signup-btn">Signup</a>
+            </div>
+            </nav>
+        </div>
+        
+        <main class="container">
+        <div class="page-header">
+            <h1>Engineering Subjects</h1>
+            <div class="header-buttons">
+                <button class="btn-primary">Filter</button>
+                <button class="btn-secondary">Search</button>
+            </div>
+        </div>
+
+        <div class="subject-grid">
+            <!-- Subject Card Example -->
+            <div class="subject-card blue">
+                <div class="icon">∑</div>
+                <h2>Engineering Mathematics</h2>
+                <p>Linear algebra, calculus, differential equations, and more.</p>
+                <div class="card-footer">
+                    <span>12 Topics</span>
+                    <a href="subject-math.html">View →</a>
+                </div>
+            </div>
+
+            <div class="subject-card red">
+                <div class="icon">🌡️</div>
+                <h2>Chemistry</h2>
+                <p>Laws of thermodynamics, heat transfer, and energy systems.</p>
+                <div class="card-footer">
+                    <span>8 Topics</span>
+                    <a href="subject-thermo.html">View →</a>
+                </div>
+            </div>
+
+
+            <div class="subject-card purple">
+                <div class="icon">⚡</div>
+                <h2>Physic</h2>
+                <p>Ohm's law, Kirchhoff's laws, network theorems, and more.</p>
+                <div class="card-footer">
+                    <span>10 Topics</span>
+                    <a href="subject-circuits.html">View →</a>
+                </div>
+            </div>
+        </div>
+          
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">More subjects coming soon!</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                We're constantly adding new subjects to help you with your studies. 
+                Have a suggestion? <a href="/contact.html" class="text-blue-600 hover:underline">Let us know!</a>
+            </p>
+        </div>
+    </main>
+
+</body>
+</html>

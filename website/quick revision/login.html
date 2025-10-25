@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - QuickRevise</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+</head>
+<body class="bg-gray-50 font-[Poppins]">
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-12 flex items-center justify-center min-h-[calc(100vh-160px)]">
+        <div class="w-full max-w-md">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">Welcome back!</h1>
+                <p class="text-gray-600">Sign in to access your study materials and progress.</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-md p-8">
+                <!-- Login Form -->
+                <form>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="you@example.com">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="password" class="block text-gray-700 text-sm font-medium mb-2">Password</label>
+                        <input type="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="••••••••">
+                        <div class="flex justify-end mt-2">
+                            <a href="/forgot-password.html" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium mb-4">
+                        Sign In
+                    </button>
+                    
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="border-t border-gray-300 flex-grow"></div>
+                        <span class="px-3 text-gray-500 text-sm">or continue with</span>
+                        <div class="border-t border-gray-300 flex-grow"></div>
+                    </div>
+                    
+                    <button type="button" class="w-full bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 py-3 rounded-lg font-medium flex items-center justify-center gap-2 mb-6">
+                        <i data-feather="mail" class="w-5 h-5"></i>
+                        Google
+                    </button>
+     
+    <custom-footer></custom-footer>
+    
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

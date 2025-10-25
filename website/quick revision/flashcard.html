@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards | QuickRevise</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <nav>
+                <div class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                   <p> Quick Revise</p>
+                </div>
+                  <ul class="nav-links">
+                <li> <a href="index.html" class="active"> Home </a></li>
+                <li> <a href="subject.html"> Subject </a></li>
+                <li> <a href="notes.html"> Notes </a></li>
+                <li> <a href="flashcard.html"> Flashcards </a></li>
+                <li> <a href="quiz.html"> Quiz </a></li>
+                <li> <a href="about.html"> About </a></li>
+                
+            </ul>
+            <div class="nav-buttons">
+                <a href="login.html" class="login-btn"> Login</a>
+                <a href="signup" class="signup-btn">Signup</a>
+            </div>
+            </nav>
+        </div>
+<body class="bg-gray-50">
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">Flashcards</h1>
+            <button class="bg-blue-400 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2">
+                <i data-feather="plus"></i> New Set
+            </button>
+        </div>
+
+        <!-- Flashcard Decks -->
+        <div class="mb-12">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Your Decks</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <a href="#" class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:border-blue-300 transition flex items-center gap-3">
+                    <div class="bg-blue-100 p-3 rounded-lg">
+                        <i data-feather="divide-square" class="text-blue-600 w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800">Math Formulas</h3>
+                        <p class="text-sm text-gray-500">24 cards</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:border-red-300 transition flex items-center gap-3">
+                    <div class="bg-red-100 p-3 rounded-lg">
+                        <i data-feather="thermometer" class="text-red-600 w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800">Chemistry</h3>
+                        <p class="text-sm text-gray-500">18 cards</p>
+                    </div>
+                </a>
+            
+                </a>
+                <a href="#" class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:border-purple-300 transition flex items-center gap-3">
+                    <div class="bg-purple-100 p-3 rounded-lg">
+                        <i data-feather="cpu" class="text-purple-600 w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800">Physic</h3>
+                        <p class="text-sm text-gray-500">15 cards</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+      
+        <!-- Flashcard Viewer -->
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Math Formulas</h2>
+            <div class="relative">
+                <!-- Flashcard -->
+                <div id="flashcard" class="aspect-[5/3] bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden transition-all duration-500 transform perspective-1000 preserve-3d" onclick="flipCard()">
+                    <!-- Front -->
+                    <div id="front" class="absolute w-full h-full flex items-center justify-center backface-hidden bg-gradient-to-r from-blue-500 to-blue-700 text-white p-8 text-center">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">What is the formula for the derivative of sin(x)?</h3>
+                            <p class="text-gray-200">Click to reveal answer</p>
+                        </div>
+                    </div>
+                    <!-- Back -->
+                    <div id="back" class="absolute w-full h-full flex items-center justify-center backface-hidden bg-gradient-to-r from-blue-300 to-blue-600 text-white p-8 text-center transform rotate-y-180">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Answer:</h3>
+                            <p class="text-2xl">d/dx sin(x) = cos(x)</p>
+                            <p class="text-sm text-gray-200 mt-4">Click to flip back</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="flex justify-center gap-4 mt-8">
+                    <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 p-3 rounded-full transition">
+                        <i data-feather="chevron-left"></i>
+                    </button>
+                    <span class="flex items-center text-gray-600">1/24</span>
+                    <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 p-3 rounded-full transition">
+                        <i data-feather="chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex justify-center gap-4 mt-6">
+                    <button class="bg-green-100 hover:bg-green-200 text-green-800 px-4 py-2 rounded-lg transition flex items-center gap-2">
+                        <i data-feather="check"></i> Got it
+                    </button>
+                    <button class="bg-red-100 hover:bg-red-200 text-red-800 px-4 py-2 rounded-lg transition flex items-center gap-2">
+                        <i data-feather="x"></i> Need practice
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+    
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Flashcard flip functionality
+        function flipCard() {
+            const flashcard = document.getElementById('flashcard');
+            const front = document.getElementById('front');
+            const back = document.getElementById('back');
+            
+            if (flashcard.classList.contains('flipped')) {
+                flashcard.classList.remove('flipped');
+                front.style.display = 'flex';
+                back.style.display = 'none';
+            } else {
+                flashcard.classList.add('flipped');
+                front.style.display = 'none';
+                back.style.display = 'flex';
+            }
+        }
+    </script>
+</body>
+</html>

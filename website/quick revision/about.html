@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - QuickRevise</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+ <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+</head>
+<body class="bg-gray-50 font-[Poppins]"><body>
+    <header>
+        <div class="nav-container">
+            <nav>
+                <div class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                   <p> Quick Revise</p>
+                </div>
+                  <ul class="nav-links">
+                <li> <a href="home" class="active"> Home </a></li>
+                <li> <a href="subject.html"> Subject </a></li>
+                <li> <a href="notes.html"> Notes </a></li>
+                <li> <a href="flashcard.html"> Flashcards </a></li>
+                <li> <a href="quiz.html"> Quiz </a></li>
+                <li> <a href="about.html"> About </a></li>
+                
+            </ul>
+            <div class="nav-buttons">
+                <a href="login.html" class="login-btn"> Login</a>
+                <a href="signup" class="signup-btn">Signup</a>
+            </div>
+            </nav>
+        </div>
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="text-center mb-20">
+            <h1 class="text-4xl font-bold text-gray-800 mb-6">About QuickRevise</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Smart study tools designed to make learning more efficient and effective for students everywhere.
+            </p>
+        </section>
+        
+       
+        
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose QuickRevise?</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="zap" class="text-blue-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Efficiency First</h3>
+                    <p class="text-gray-600">Our tools are designed based on cognitive science to help you learn faster and retain more.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="layers" class="text-purple-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">All-in-One Platform</h3>
+                    <p class="text-gray-600">Notes, flashcards, and quizzes integrated seamlessly—no more switching between apps.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="clock" class="text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Study Anywhere</h3>
+                    <p class="text-gray-600">Access your materials on any device, online or offline, whenever inspiration strikes.</p>
+                </div>
+            </div>
+        </section>
+        
+       
+
+    <custom-footer></custom-footer>
+    
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
